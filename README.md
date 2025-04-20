@@ -48,4 +48,4 @@ Available YOLO models:
 
 ## Results
 
-Training results and model weights are saved in the `runs/brain_tumor_detection` directory.
+Training results and model weights are saved in the `runs/brain_tumor_detection` directory
