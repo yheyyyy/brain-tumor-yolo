@@ -1,0 +1,35 @@
+# Default configuration for brain tumor detection
+
+model:
+  size: "yolov11-small"  # Options: yolov11-small, yolov11-medium, yolov11-large
+  save_dir: "runs/train"
+
+data:
+  yaml_url: "https://github.com/ultralytics/yolov11/releases/download/v8.0/brain-tumor-dataset.yaml"
+  local_path: "data/brain-tumor.yaml"
+  validation_images: "data/validation/"
+
+training:
+  epochs: 50
+  batch_size: 16
+  image_size: 320
+  device: "cpu" # Options: "cpu", "cuda", "mps"
+  workers: 0
+
+augmentation:
+  scale: 0.9
+  mosaic: 0.9
+  mixup: 0.2
+  copy_paste: 0.4
+  rotation: 10
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+
+data:
+  yaml_url: "https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/cfg/datasets/brain-tumor.yaml"
+  local_path: "brain-tumor.yaml"
+  validation_images:
+    - ["datasets/brain-tumor/valid/images/val_1 (1).jpg", "datasets/brain-tumor/valid/labels/val_1 (1).txt"]
+    - ["datasets/brain-tumor/valid/images/val_1 (2).jpg", "datasets/brain-tumor/valid/labels/val_1 (2).txt"]
+    - ["datasets/brain-tumor/valid/images/val_1 (3).jpg", "datasets/brain-tumor/valid/labels/val_1 (3).txt"]
